@@ -1,0 +1,32 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+version = '1.0'
+
+mainClassName = "ch.boye.GDriveUpload.GDriveUpload"
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Manifest-Version': version, 'Main-Class': 'ch.boye.GDriveUpload.GDriveUpload'
+    }
+}
+
+dependencies {
+    compile "org.apache.httpcomponents:httpclient:4.3.2"
+    compile "org.apache.httpcomponents:httpmime:4.3.2"
+    compile "commons-cli:commons-cli:1.2"
+    compile "commons-io:commons-io:2.4"
+    compile "org.json:json:20140107"
+}
